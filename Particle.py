@@ -11,7 +11,7 @@ class Particle(abc.ABC):
     radius: float
     vx: float
     vy: float
-    color: pygame.color.Color = pygame.color.Color("black")
+    color: pygame.color.Color = pygame.color.Color('black')
 
     def __init__(self, x: float, y: float, vx: float, vy: float, radius: float):
         self.x = x
@@ -126,6 +126,15 @@ class Particle(abc.ABC):
     def move_after_collision_with_left_border(self):
         self.x = self.radius
 
+
+class Plant(Particle):
+    color = pygame.Color('green')
+
+class SurfaceWater(Particle):
+    color = pygame.Color('cyan')
+
+class SoilWater(Particle):
+    color = pygame.Color('blue')
 
 if __name__ == "__main__":
     pass
